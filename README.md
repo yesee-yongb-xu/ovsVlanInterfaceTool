@@ -8,16 +8,16 @@
 ```bash
 # bash centos_add_vlan_interface.sh eth9 1001 1050
 # systemctl restart network
-# bash add_vlan_bridges.sh A eth0 1001 1050
+# bash add_vlan_bridges.sh 00000 eth0 1001 1050
 ```
 
 
-需注意 add_vlan_bridges.sh 命令最前面的 A 代表的是每台虛擬系統 ID 的轉換，轉換規則可參考 excel 欄位規則
+需注意 add_vlan_bridges.sh 命令最前面的 00000 代表的是 ovsvm 流水號
 
-id 1 => A
 
-id 16384 => XFD
 
-id 11881375 => ZZZZZ 
+將採用 00000-zzzzz-ZZZZZ 36 個字元的編碼方式
+00000 代表最小的數字
+ZZZZZ 代表最大的數字"
 
-最多接受到 ZZZZZ
+
