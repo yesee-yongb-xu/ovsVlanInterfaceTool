@@ -2,6 +2,12 @@
 
 這幾個 bash script 用來快速建置 vlan interface 以及 ovs add vlan interface
 
+需要檢查 vlan 模組是否有打開
+
+```bash
+# modprobe 8021q
+# lsmod | grep -i 8021q
+```
 
 三行命令快速完成 ovs vlan inteface 建置
 
