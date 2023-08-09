@@ -18,7 +18,10 @@ do
  
   CONFIG_FILE="/etc/sysconfig/network-scripts/ifcfg-${DEVICE}.${VLAN_ID}"
   echo "" > "$CONFIG_FILE"
-  echo "TYPE=\"Vlan\"" > "$CONFIG_FILE"
+  echo "DEVICE=\"${DEVICE}.${VLAN_ID}\"" >> "$CONFIG_FILE"
+  echo "TYPE=\"Vlan\"" >> "$CONFIG_FILE"
+  echo "ONBOOT=\"yes\"" >> "$CONFIG_FILE"
+  echo "VLAN=\"yes\"" >> "$CONFIG_FILE"
   echo "PHYSDEV=\"${DEVICE}\"" >> "$CONFIG_FILE"
   echo "VLAN_ID=\"${VLAN_ID}\"" >> "$CONFIG_FILE"
 
